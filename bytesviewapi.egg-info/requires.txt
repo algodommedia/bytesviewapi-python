@@ -1,0 +1,2 @@
+jsonlib-python3
+requests<3.0.0
