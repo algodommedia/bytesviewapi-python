@@ -1,1 +1,1 @@
-from bytesviewapi.bytesviewapi_client import BytesviewapiClient
+from bytesviewapi.bytesviewapi_client import BytesviewApiClient

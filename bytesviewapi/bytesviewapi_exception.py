@@ -1,8 +1,5 @@
 class BytesviewException(Exception):
-    """Represents an ''error'' response status value from News API."""
+    """Base class for all other exceptions"""
 
-    def __init__(self, exception):
-        self.exception = exception
-
-    def get_exception(self):
-        return self.exception
+    def __init__(self, Error):
+        self.Error = Error

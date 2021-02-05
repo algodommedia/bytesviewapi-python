@@ -1,7 +1,11 @@
-from bytesviewapi import BytesviewapiClient
+from bytesviewapi import BytesviewApiClient
+import os
 
 
-api = BytesviewapiClient(api_key='eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ1c2VybmFtZSI6Im5hbXJhdGFAYWxnb2RvbW1lZGlhLmNvbSJ9.ceDtxy7gbSSI1t3lrokTBMNajge7oPrmo07R7phKRI8')
+api_key = os.environ.get("TOKEN")
 
-a = api.sentiment_api(data = {0: "we are good here"}, lang = "en")
-print(a)
+api = BytesviewApiClient(api_key=str(api_key))
+
+response = api.sentiment_api(data = {0: "this is good"}, lang = "en")
+print(response)
+
