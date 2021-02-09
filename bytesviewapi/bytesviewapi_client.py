@@ -1,6 +1,6 @@
 import requests
 from bytesviewapi.api_authentication import BytesApiAuth
-from bytesviewapi import env_file
+from bytesviewapi import const
 from bytesviewapi.utils import is_valid_dict
 import json
 from bytesviewapi.bytesviewapi_exception import BytesviewException
@@ -57,7 +57,7 @@ class BytesviewApiClient(object):
 
         # Check if valid language string
         if isinstance(lang, str):
-            if lang in env_file.sentiment_languages_support:
+            if lang in const.SENTIMENT_LANGUAGES_SUPPORT:
                 payload["lang"] = lang
             else:
                 raise ValueError("Please provide valid Language code, check documentation for supported languages")
@@ -66,7 +66,7 @@ class BytesviewApiClient(object):
         
 
         # Make a POST request to env_file.SENTIMENT_URL
-        response = self.request_method.post(env_file.SENTIMENT_URL, auth=self.header, timeout=300, data=json.dumps(payload, indent = 4)) 
+        response = self.request_method.post(const.SENTIMENT_URL, auth=self.header, timeout=300, data=json.dumps(payload, indent = 4)) 
 
 
         # Check the status code of the response if not equal to 200, then raise exception

@@ -15,10 +15,10 @@ pip install bytesviewapi
 `POST 1/static/sentiment`
 
 ```
-from bytesviewapi import BytesviewapiClient
+from bytesviewapi import BytesviewApiClient
 
 # API key authorization, Initialize the client with your API key:
-api = BytesviewapiClient(api_key="API key")
+api = BytesviewApiClient(api_key="API key")
 
 # pass your desired strings in a dictionary with unique key
 data = {"key1": "We are good here", "key2": "this is not what we expect"}
@@ -30,4 +30,4 @@ response = api.sentiment_api(data = data , lang = "en")
 
 `data` : You can pass your desired strings in the dictionary format where each string has some unique key. 
 
-`lang` : Language Code (English - en, Arabic - ar), Default laguage is english(en).
+`lang` : Language Code (English - en, Arabic - ar), Default language is english(en).
