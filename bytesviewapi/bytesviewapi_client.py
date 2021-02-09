@@ -1,6 +1,6 @@
 import requests
 from bytesviewapi.api_authentication import BytesApiAuth
-from bytesviewapi import const
+from bytesviewapi import constants
 from bytesviewapi.utils import is_valid_dict
 import json
 from bytesviewapi.bytesviewapi_exception import BytesviewException
@@ -57,7 +57,7 @@ class BytesviewApiClient(object):
 
         # Check if valid language string
         if isinstance(lang, str):
-            if lang in const.SENTIMENT_LANGUAGES_SUPPORT:
+            if lang in constants.SENTIMENT_LANGUAGES_SUPPORT:
                 payload["lang"] = lang
             else:
                 raise ValueError("Please provide valid Language code, check documentation for supported languages")
@@ -65,8 +65,8 @@ class BytesviewApiClient(object):
             raise TypeError("Language input should be an string")
         
 
-        # Make a POST request to const.SENTIMENT_URL
-        response = self.request_method.post(const.SENTIMENT_URL, auth=self.header, timeout=300, data=json.dumps(payload, indent = 4)) 
+        # Make a POST request to constants.SENTIMENT_URL
+        response = self.request_method.post(constants.SENTIMENT_URL, auth=self.header, timeout=300, data=json.dumps(payload, indent = 4)) 
 
 
         # Check the status code of the response if not equal to 200, then raise exception
@@ -104,7 +104,7 @@ class BytesviewApiClient(object):
 
         # Check if valid language string
         if isinstance(lang, str):
-            if lang in const.EMOTION_LANGUAGES_SUPPORT:
+            if lang in constants.EMOTION_LANGUAGES_SUPPORT:
                 payload["lang"] = lang
             else:
                 raise ValueError("Please provide valid Language code, check documentation for supported languages")
@@ -112,8 +112,8 @@ class BytesviewApiClient(object):
             raise TypeError("Language input should be an string")
         
 
-        # Make a POST request to const.EMOTION_URL
-        response = self.request_method.post(const.EMOTION_URL, auth=self.header, timeout=300, data=json.dumps(payload, indent = 4)) 
+        # Make a POST request to constants.EMOTION_URL
+        response = self.request_method.post(constants.EMOTION_URL, auth=self.header, timeout=300, data=json.dumps(payload, indent = 4)) 
 
 
         # Check the status code of the response if not equal to 200, then raise exception
@@ -150,7 +150,7 @@ class BytesviewApiClient(object):
 
         # Check if valid language string
         if isinstance(lang, str):
-            if lang in const.KEYWORDS_LANGUAGES_SUPPORT:
+            if lang in constants.KEYWORDS_LANGUAGES_SUPPORT:
                 payload["lang"] = lang
             else:
                 raise ValueError("Please provide valid Language code, check documentation for supported languages")
@@ -158,8 +158,8 @@ class BytesviewApiClient(object):
             raise TypeError("Language input should be an string")
         
 
-        # Make a POST request to const.KEYWORDS_URL
-        response = self.request_method.post(const.KEYWORDS_URL, auth=self.header, timeout=300, data=json.dumps(payload, indent = 4)) 
+        # Make a POST request to constants.KEYWORDS_URL
+        response = self.request_method.post(constants.KEYWORDS_URL, auth=self.header, timeout=300, data=json.dumps(payload, indent = 4)) 
 
 
         # Check the status code of the response if not equal to 200, then raise exception
@@ -197,7 +197,7 @@ class BytesviewApiClient(object):
 
         # Check if valid language string
         if isinstance(lang, str):
-            if lang in const.SEMANTIC_LANGUAGES_SUPPORT:
+            if lang in constants.SEMANTIC_LANGUAGES_SUPPORT:
                 payload["lang"] = lang
             else:
                 raise ValueError("Please provide valid Language code, check documentation for supported languages")
@@ -205,8 +205,8 @@ class BytesviewApiClient(object):
             raise TypeError("Language input should be an string")
         
 
-        # Make a POST request to const.SEMANTIC_URL
-        response = self.request_method.post(const.SEMANTIC_URL, auth=self.header, timeout=300, data=json.dumps(payload, indent = 4)) 
+        # Make a POST request to constants.SEMANTIC_URL
+        response = self.request_method.post(constants.SEMANTIC_URL, auth=self.header, timeout=300, data=json.dumps(payload, indent = 4)) 
 
 
         # Check the status code of the response if not equal to 200, then raise exception
@@ -240,8 +240,8 @@ class BytesviewApiClient(object):
         else:
             raise ValueError("Please provide data, data can not be empty")
 
-        # Make a POST request to const.NAME_GENDER_URL
-        response = self.request_method.post(const.NAME_GENDER_URL, auth=self.header, timeout=300, data=json.dumps(payload, indent = 4)) 
+        # Make a POST request to constants.NAME_GENDER_URL
+        response = self.request_method.post(constants.NAME_GENDER_URL, auth=self.header, timeout=300, data=json.dumps(payload, indent = 4)) 
 
 
         # Check the status code of the response if not equal to 200, then raise exception
@@ -279,7 +279,7 @@ class BytesviewApiClient(object):
 
         # Check if valid language string
         if isinstance(lang, str):
-            if lang in const.NER_LANGUAGES_SUPPORT:
+            if lang in constants.NER_LANGUAGES_SUPPORT:
                 payload["lang"] = lang
             else:
                 raise ValueError("Please provide valid Language code, check documentation for supported languages")
@@ -287,8 +287,8 @@ class BytesviewApiClient(object):
             raise TypeError("Language input should be an string")
         
 
-        # Make a POST request to const.NER_URL
-        response = self.request_method.post(const.NER_URL, auth=self.header, timeout=300, data=json.dumps(payload, indent = 4)) 
+        # Make a POST request to constants.NER_URL
+        response = self.request_method.post(constants.NER_URL, auth=self.header, timeout=300, data=json.dumps(payload, indent = 4)) 
 
 
         # Check the status code of the response if not equal to 200, then raise exception
@@ -326,7 +326,7 @@ class BytesviewApiClient(object):
 
         # Check if valid language string
         if isinstance(lang, str):
-            if lang in const.INTENT_LANGUAGES_SUPPORT:
+            if lang in constants.INTENT_LANGUAGES_SUPPORT:
                 payload["lang"] = lang
             else:
                 raise ValueError("Please provide valid Language code, check documentation for supported languages")
@@ -334,8 +334,8 @@ class BytesviewApiClient(object):
             raise TypeError("Language input should be an string")
         
 
-        # Make a POST request to const.INTENT_URL
-        response = self.request_method.post(const.INTENT_URL, auth=self.header, timeout=300, data=json.dumps(payload, indent = 4)) 
+        # Make a POST request to constants.INTENT_URL
+        response = self.request_method.post(constants.INTENT_URL, auth=self.header, timeout=300, data=json.dumps(payload, indent = 4)) 
 
 
         # Check the status code of the response if not equal to 200, then raise exception

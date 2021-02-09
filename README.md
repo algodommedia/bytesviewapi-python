@@ -35,7 +35,7 @@ response = api.sentiment_api(data = data , lang = "en")
 
 `lang` : Language Code (English - en, Arabic - ar), Default language is english(en).
 
-
+&nbsp;
 ### EMOTION API
 
 `POST 1/static/emotion`
@@ -58,7 +58,7 @@ response = api.emotion_api(data = data , lang = "en")
 
 `lang` : Language Code (English - en), Default language is english(en).
 
-
+&nbsp;
 ### KEYWORDS API
 
 `POST 1/static/keywords`
@@ -81,7 +81,7 @@ response = api.keywords_api(data = data , lang = "en")
 
 `lang` : Language Code (English - en), Default language is english(en).
 
-
+&nbsp;
 ### SEMANTIC API
 
 `POST 1/static/semantic`
@@ -103,7 +103,7 @@ response = api.semantic_api(data = data , lang = "en")
 
 `lang` : Language Code (English - en), Default language is english(en).
 
-
+&nbsp;
 ### NAME-GENDER API
 
 `POST 1/static/name-gender`
@@ -116,14 +116,14 @@ api = BytesviewApiClient(api_key="API key")
 
 # Pass your desired names in the dictionary format where each string has some unique key.
 data ={"key1":"alvina", "key2":"نسترن", "key3":"ron", "key4":"rinki", "key5":"オウガ"}
-response = api.semantic_api(data = data)
+response = api.name_gender_api(data = data)
 
 ```
 `API key` : Your private Bytesview API key. 
 
-`data` : You can pass your desired strings in the dictionary format where each string has some unique key.
+`data` : You can pass your desired names in the dictionary format where each string has some unique key.
 
-
+&nbsp;
 ### NAMED-ENTITY API
 
 `POST 1/static/ner`
@@ -145,7 +145,7 @@ response = api.ner_api(data = data , lang = "en")
 
 `lang` : Language Code (English - en), Default language is english(en).
 
-
+&nbsp;
 ### INTENT API
 
 `POST 1/static/intent`
