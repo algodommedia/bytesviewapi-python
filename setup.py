@@ -15,11 +15,11 @@ setup(
     author='Bytesview',
     author_email='contact@bytesview.com',
     license='MIT',
-    install_requires=["requests<3.0.0", "jsonlib-python3"],
+    install_requires=["requests<3.0.0"],
     setup_requires=['pytest-runner'],
     tests_require=['pytest'],
     test_suite='tests',    
-    python_requires='>=3.6',
+    python_requires='>=3.5',
     keywords=[
         'byteviewapi',
         'senitment',
@@ -29,8 +29,12 @@ setup(
         "Intended Audience :: Developers",
         "Intended Audience :: Customer Service",
         "License :: OSI Approved :: MIT License",
-        'Programming Language :: Python :: 3.6',
-        'Operating System :: OS independent',
+        "Programming Language :: Python :: 3",
+        "Programming Language :: Python :: 3.5",
+        "Programming Language :: Python :: 3.6",
+        "Programming Language :: Python :: 3.7",
+        "Programming Language :: Python :: 3.8",
+        "Programming Language :: Python :: 3.9",
       ] 
 
 )

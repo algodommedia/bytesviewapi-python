@@ -4,6 +4,7 @@ import unittest
 
 class test_bytesviwapi(unittest.TestCase):
     def setUp(self):
+        # your private API key.
         key = os.environ.get("TOKEN")
         self.api = BytesviewApiClient(key)
 

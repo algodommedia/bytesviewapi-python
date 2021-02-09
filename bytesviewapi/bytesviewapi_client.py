@@ -7,7 +7,7 @@ from bytesviewapi.bytesviewapi_exception import BytesviewException
 
 class BytesviewApiClient(object):
 
-    def __init__(self, api_key, session=None):
+    def __init__(self, api_key=None, session=None):
 
         """ Initializes Byteview client object for access Bytesview APIs """
         
@@ -20,9 +20,9 @@ class BytesviewApiClient(object):
         :type session: requests.Session
         """        
         
+        self.api_key = api_key
         # BytesviewAPI request header 
-        self.header = BytesApiAuth(api_key=api_key)
-
+        self.header = BytesApiAuth(api_key=self.api_key)
         # Check if session argument is None 
         if session is None:
             self.request_method = requests
@@ -42,6 +42,9 @@ class BytesviewApiClient(object):
         """
         
         payload = {}
+
+        if self.api_key is None:
+            raise ValueError("Please provide your private API Key")
 
         # Check if valid data dictionary
         if data is not None:
