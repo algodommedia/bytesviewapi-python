@@ -37,7 +37,7 @@ class BytesviewApiClient(object):
         :param data: pass your desired strings in the dictionary format where each string has some unique key. (ex. {0: "this is good"})
         :type data: dictionary
         :param lang: Language Code (English - en, Arabic - ar), Default laguage is english(en) 
-        :type data: string
+        :type lang: string
         :return: server response in JSON object 
         """
         
@@ -65,8 +65,277 @@ class BytesviewApiClient(object):
             raise TypeError("Language input should be an string")
         
 
-        # Make a POST request to env_file.SENTIMENT_URL
+        # Make a POST request to const.SENTIMENT_URL
         response = self.request_method.post(const.SENTIMENT_URL, auth=self.header, timeout=300, data=json.dumps(payload, indent = 4)) 
+
+
+        # Check the status code of the response if not equal to 200, then raise exception
+        if response.status_code != 200:
+            raise BytesviewException(response.json())
+        
+        # Return the response json
+        return response.json()
+
+
+    def emotion_api( self, data=None, lang="en"):
+        """ Sending POST request to the emotion api"""
+        
+        """
+        :param data: pass your desired strings in the dictionary format where each string has some unique key. (ex. {0: "this is good"})
+        :type data: dictionary
+        :param lang: Language Code (English - en), Default laguage is english(en) 
+        :type lang: string
+        :return: server response in JSON object 
+        """
+        
+        payload = {}
+
+        if self.api_key is None:
+            raise ValueError("Please provide your private API Key")
+
+        # Check if valid data dictionary
+        if data is not None:
+            if is_valid_dict(data):
+                payload["data"] = data
+            else:
+                raise TypeError("Data should be of type dictionary")
+        else:
+            raise ValueError("Please provide data, data can not be empty")
+
+        # Check if valid language string
+        if isinstance(lang, str):
+            if lang in const.EMOTION_LANGUAGES_SUPPORT:
+                payload["lang"] = lang
+            else:
+                raise ValueError("Please provide valid Language code, check documentation for supported languages")
+        else:
+            raise TypeError("Language input should be an string")
+        
+
+        # Make a POST request to const.EMOTION_URL
+        response = self.request_method.post(const.EMOTION_URL, auth=self.header, timeout=300, data=json.dumps(payload, indent = 4)) 
+
+
+        # Check the status code of the response if not equal to 200, then raise exception
+        if response.status_code != 200:
+            raise BytesviewException(response.json())
+        
+        # Return the response json
+        return response.json()
+
+    def keywords_api( self, data=None, lang="en"):
+        """ Sending POST request to the keywords api"""
+        
+        """
+        :param data: pass your desired strings in the dictionary format where each string has some unique key. (ex. {0: "this is good"})
+        :type data: dictionary
+        :param lang: Language Code (English - en), Default laguage is english(en) 
+        :type lang: string
+        :return: server response in JSON object 
+        """
+        
+        payload = {}
+
+        if self.api_key is None:
+            raise ValueError("Please provide your private API Key")
+
+        # Check if valid data dictionary
+        if data is not None:
+            if is_valid_dict(data):
+                payload["data"] = data
+            else:
+                raise TypeError("Data should be of type dictionary")
+        else:
+            raise ValueError("Please provide data, data can not be empty")
+
+        # Check if valid language string
+        if isinstance(lang, str):
+            if lang in const.KEYWORDS_LANGUAGES_SUPPORT:
+                payload["lang"] = lang
+            else:
+                raise ValueError("Please provide valid Language code, check documentation for supported languages")
+        else:
+            raise TypeError("Language input should be an string")
+        
+
+        # Make a POST request to const.KEYWORDS_URL
+        response = self.request_method.post(const.KEYWORDS_URL, auth=self.header, timeout=300, data=json.dumps(payload, indent = 4)) 
+
+
+        # Check the status code of the response if not equal to 200, then raise exception
+        if response.status_code != 200:
+            raise BytesviewException(response.json())
+        
+        # Return the response json
+        return response.json()
+
+
+    def semantic_api( self, data=None, lang="en"):
+        """ Sending POST request to the semantic api"""
+        
+        """
+        :param data: Pass your both strings in the "string1" and "string2" key of the dictionary data. (ex. {"string1": "this is good", "string2": "this is great"})
+        :type data: dictionary
+        :param lang: Language Code (English - en), Default laguage is english(en) 
+        :type lang: string
+        :return: server response in JSON object 
+        """
+        
+        payload = {}
+
+        if self.api_key is None:
+            raise ValueError("Please provide your private API Key")
+
+        # Check if valid data dictionary
+        if data is not None:
+            if is_valid_dict(data):
+                payload["data"] = data
+            else:
+                raise TypeError("Data should be of type dictionary")
+        else:
+            raise ValueError("Please provide data, data can not be empty")
+
+        # Check if valid language string
+        if isinstance(lang, str):
+            if lang in const.SEMANTIC_LANGUAGES_SUPPORT:
+                payload["lang"] = lang
+            else:
+                raise ValueError("Please provide valid Language code, check documentation for supported languages")
+        else:
+            raise TypeError("Language input should be an string")
+        
+
+        # Make a POST request to const.SEMANTIC_URL
+        response = self.request_method.post(const.SEMANTIC_URL, auth=self.header, timeout=300, data=json.dumps(payload, indent = 4)) 
+
+
+        # Check the status code of the response if not equal to 200, then raise exception
+        if response.status_code != 200:
+            raise BytesviewException(response.json())
+        
+        # Return the response json
+        return response.json()
+
+
+    def name_gender_api( self, data=None):
+        """ Sending POST request to the name-gender api"""
+        
+        """
+        :param data: Pass your desired names in the dictionary format where each string has some unique key. (ex. {0: "ron"})
+        :type data: dictionary
+        :return: server response in JSON object 
+        """
+        
+        payload = {}
+
+        if self.api_key is None:
+            raise ValueError("Please provide your private API Key")
+
+        # Check if valid data dictionary
+        if data is not None:
+            if is_valid_dict(data):
+                payload["data"] = data
+            else:
+                raise TypeError("Data should be of type dictionary")
+        else:
+            raise ValueError("Please provide data, data can not be empty")
+
+        # Make a POST request to const.NAME_GENDER_URL
+        response = self.request_method.post(const.NAME_GENDER_URL, auth=self.header, timeout=300, data=json.dumps(payload, indent = 4)) 
+
+
+        # Check the status code of the response if not equal to 200, then raise exception
+        if response.status_code != 200:
+            raise BytesviewException(response.json())
+        
+        # Return the response json
+        return response.json()
+
+
+    def ner_api( self, data=None, lang="en"):
+        """ Sending POST request to the ner api"""
+        
+        """
+        :param data: pass your desired strings in the dictionary format where each string has some unique key. (ex. {0: "this is good"})
+        :type data: dictionary
+        :param lang: Language Code (English - en), Default laguage is english(en) 
+        :type lang: string
+        :return: server response in JSON object 
+        """
+        
+        payload = {}
+
+        if self.api_key is None:
+            raise ValueError("Please provide your private API Key")
+
+        # Check if valid data dictionary
+        if data is not None:
+            if is_valid_dict(data):
+                payload["data"] = data
+            else:
+                raise TypeError("Data should be of type dictionary")
+        else:
+            raise ValueError("Please provide data, data can not be empty")
+
+        # Check if valid language string
+        if isinstance(lang, str):
+            if lang in const.NER_LANGUAGES_SUPPORT:
+                payload["lang"] = lang
+            else:
+                raise ValueError("Please provide valid Language code, check documentation for supported languages")
+        else:
+            raise TypeError("Language input should be an string")
+        
+
+        # Make a POST request to const.NER_URL
+        response = self.request_method.post(const.NER_URL, auth=self.header, timeout=300, data=json.dumps(payload, indent = 4)) 
+
+
+        # Check the status code of the response if not equal to 200, then raise exception
+        if response.status_code != 200:
+            raise BytesviewException(response.json())
+        
+        # Return the response json
+        return response.json()
+
+
+    def intent_api( self, data=None, lang="en"):
+        """ Sending POST request to the intent api"""
+        
+        """
+        :param data: pass your desired strings in the dictionary format where each string has some unique key. (ex. {0: "this is good"})
+        :type data: dictionary
+        :param lang: Language Code (English - en), Default laguage is english(en) 
+        :type lang: string
+        :return: server response in JSON object 
+        """
+        
+        payload = {}
+
+        if self.api_key is None:
+            raise ValueError("Please provide your private API Key")
+
+        # Check if valid data dictionary
+        if data is not None:
+            if is_valid_dict(data):
+                payload["data"] = data
+            else:
+                raise TypeError("Data should be of type dictionary")
+        else:
+            raise ValueError("Please provide data, data can not be empty")
+
+        # Check if valid language string
+        if isinstance(lang, str):
+            if lang in const.INTENT_LANGUAGES_SUPPORT:
+                payload["lang"] = lang
+            else:
+                raise ValueError("Please provide valid Language code, check documentation for supported languages")
+        else:
+            raise TypeError("Language input should be an string")
+        
+
+        # Make a POST request to const.INTENT_URL
+        response = self.request_method.post(const.INTENT_URL, auth=self.header, timeout=300, data=json.dumps(payload, indent = 4)) 
 
 
         # Check the status code of the response if not equal to 200, then raise exception

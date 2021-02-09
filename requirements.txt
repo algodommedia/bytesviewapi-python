@@ -4,7 +4,6 @@ chardet==4.0.0
 idna==2.10
 importlib-metadata==3.4.0
 iniconfig==1.1.1
-jsonlib-python3==1.6.1
 packaging==20.9
 pluggy==0.13.1
 py==1.10.0
