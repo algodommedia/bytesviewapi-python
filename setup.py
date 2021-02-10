@@ -6,7 +6,7 @@ with open("README.md", "r") as fh:
 
 setup(
     name='bytesviewapi',
-    version='0.0.2',
+    version='0.1.0',
     packages=['bytesviewapi'],
     description='Python library for bytesview client-API Call',
     long_description=long_description,
@@ -25,7 +25,7 @@ setup(
         'senitment',
         ],
     classifiers=[
-        "Development Status :: 1 - Planning",
+        "Development Status :: 2 - Pre-Alpha",
         "Intended Audience :: Developers",
         "Intended Audience :: Customer Service",
         "License :: OSI Approved :: MIT License",
