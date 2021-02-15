@@ -1,5 +1,10 @@
-# Bytesviewapi Python Client
+# <p align="center">Bytesviewapi Python Client
 Bytesviewapi allows you to create a library for accessing http services easily, in a centralized way. An API defined by bytesviewapi will return a JSON object when called.
+
+[![License](https://img.shields.io/badge/license-MIT-blue)](https://github.com/algodommedia/bytesviewapi-python/blob/main/LICENSE.txt)
+[![PyPI](https://img.shields.io/pypi/v/bytesviewapi?color=fd7e14)](https://pypi.org/project/newsapi-python/)
+[![Supported Python versions](https://img.shields.io/pypi/pyversions/pyTelegramBotAPI.svg)](https://pypi.python.org/pypi/pyTelegramBotAPI)
+[![Python](https://img.shields.io/badge/python-3.5%20%7C%203.6%20%7C%203.7%20%7C%203.8%20%7C%203.9-blue)](https://pypi.org/project/bytesviewapi)
 
 # Installation
 
@@ -166,3 +171,16 @@ response = api.intent_api(data = data , lang = "en")
 `data` : You can pass your desired strings in the dictionary format where each string has some unique key. 
 
 `lang` : Language Code (English - en), Default language is english(en).
+
+## License
+
+Provided under [MIT License](https://github.com/algodommedia/bytesviewapi-python/blob/main/LICENSE.txt) by Matt Lisivick.
+
+```
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS
+FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR
+COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER
+IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN
+CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
+```
