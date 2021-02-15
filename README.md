@@ -1,7 +1,7 @@
 ![Alt text](bytesview-logo.png?raw=true)
 
 # <p align="center">Bytesviewapi Python Client
-Bytesviewapi allows you to create a library for accessing http services easily, in a centralized way. An API defined by bytesviewapi will return a JSON object when called.
+Bytesviewapi allows you to create a library for accessing http services easily, in a centralized way. An API defined by bytesviewapi will return a JSON object when called. Bytesviewapi docs can be seen `here <https://www.bytesview.com/docs/>`.
 
 [![Build Status](https://img.shields.io/github/workflow/status/algodommedia/bytesviewapi-python/Upload%20Python%20Package)](https://github.com/algodommedia/bytesviewapi-python/actions?query=workflow%3A%22Upload+Python+Package%22)
 [![License](https://img.shields.io/badge/license-MIT-blue)](https://github.com/algodommedia/bytesviewapi-python/blob/main/LICENSE)
@@ -19,8 +19,6 @@ Python >= 3.5 fully supported and tested.
 pip install bytesviewapi
 ```
 ## Quick Start
-=========================
-Bytesviewapi docs can be seen `here <https://www.bytesview.com/docs/>`.
 
 ### SENTIMENT API
 
