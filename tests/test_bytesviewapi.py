@@ -5,7 +5,7 @@ import unittest
 class test_bytesviwapi(unittest.TestCase):
     def setUp(self):
         # your private API key.
-        key = os.environ.get("TOKEN")
+        key = os.environ.get("PYTEST_TOKEN")
         self.api = BytesviewApiClient(key)
 
     def test_sentiment_api(self):

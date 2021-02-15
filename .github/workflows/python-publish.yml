@@ -26,7 +26,8 @@ jobs:
       env:
         TWINE_USERNAME: __token__
         TWINE_PASSWORD: ${{ secrets.BYTESVIEWAPI_TOKEN }}
-      run: |
+        PYTEST_TOKEN: ${{ secrets.PYTEST_TOKEN }}
+      run: |  
         pytest
         python setup.py sdist bdist_wheel
         twine upload dist/*
