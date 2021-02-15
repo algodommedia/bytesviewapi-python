@@ -17,7 +17,7 @@ jobs:
     - name: Set up Python
       uses: actions/setup-python@v2
       with:
-        python-version: '3.x'
+        python-version: '3.8'
     - name: Install dependencies
       run: |
         python -m pip install --upgrade pip
@@ -25,10 +25,10 @@ jobs:
     - name: Build and publish
       env:
         PYTEST_TOKEN: ${{ secrets.PYTEST_TOKEN }}
-        #TWINE_USERNAME: __token__
-        #TWINE_PASSWORD: ${{ secrets.BYTESVIEWAPI_TOKEN }}
+        TWINE_USERNAME: __token__
+        TWINE_PASSWORD: ${{ secrets.BYTESVIEWAPI_TOKEN }}
       run: |
         echo $PYTEST_TOKEN  
         pytest
-        #python setup.py sdist bdist_wheel
-        #twine upload dist/*
+        python setup.py sdist bdist_wheel
+        twine upload dist/*
