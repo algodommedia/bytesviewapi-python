@@ -1,6 +1,7 @@
 # <p align="center">Bytesviewapi Python Client
 Bytesviewapi allows you to create a library for accessing http services easily, in a centralized way. An API defined by bytesviewapi will return a JSON object when called.
 
+[![Build Status](https://img.shields.io/github/workflow/status/algodommedia/bytesviewapi-python/Upload%20Python%20Package)](https://github.com/algodommedia/bytesviewapi-python/actions?query=workflow%3A%22Upload+Python+Package%22)
 [![License](https://img.shields.io/badge/license-MIT-blue)](https://github.com/algodommedia/bytesviewapi-python/blob/main/LICENSE)
 [![PyPI](https://img.shields.io/pypi/v/bytesviewapi?color=fd7e14)](https://pypi.org/project/newsapi-python/)
 [![Supported Python versions](https://img.shields.io/pypi/pyversions/pyTelegramBotAPI.svg)](https://pypi.python.org/pypi/pyTelegramBotAPI)
