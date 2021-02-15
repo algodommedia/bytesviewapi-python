@@ -19,8 +19,8 @@ Python >= 3.5 fully supported and tested.
 pip install bytesviewapi
 ```
 ## Quick Start
-
-Bytesviewapi docs can be seen `here <https://www.bytesview.com/docs/>`__.
+=========================
+Bytesviewapi docs can be seen `here <https://www.bytesview.com/docs/>`.
 
 ### SENTIMENT API
 
