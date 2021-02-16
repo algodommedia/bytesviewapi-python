@@ -4,7 +4,7 @@ BASE_URL = 'https://api.bytesview.com/1/'
 
 # Sentiment URL 
 SENTIMENT_URL = BASE_URL + 'static/sentiment'
-SENTIMENT_LANGUAGES_SUPPORT = {"ar", "en"}
+SENTIMENT_LANGUAGES_SUPPORT = {"ar", "en", 'ja'}
 
 
 # Emotion URL 

@@ -42,7 +42,7 @@ response = api.sentiment_api(data = data , lang = "en")
 
 `data` : You can pass your desired strings in the dictionary format where each string has some unique key. 
 
-`lang` : Language Code (English - en, Arabic - ar), Default language is english(en).
+`lang` : Language Code (English - en, Arabic - ar, Japanese - ja), Default language is english(en).
 
 &nbsp;
 ### EMOTION API
