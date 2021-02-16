@@ -36,7 +36,7 @@ class BytesviewApiClient(object):
         """
         :param data: pass your desired strings in the dictionary format where each string has some unique key. (ex. {0: "this is good"})
         :type data: dictionary
-        :param lang: Language Code (English - en, Arabic - ar), Default laguage is english(en) 
+        :param lang: Language Code (English - en, Arabic - ar, Japanese = ja), Default laguage is english(en) 
         :type lang: string
         :return: server response in JSON object 
         """
