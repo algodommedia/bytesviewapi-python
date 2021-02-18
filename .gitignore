@@ -4,6 +4,8 @@
 ### Python ###
 # Byte-compiled / optimized / DLL files
 project_env
+my_test.py
+.vscode/
 __pycache__/
 *.py[cod]
 *$py.class

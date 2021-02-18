@@ -4,6 +4,8 @@ from bytesviewapi import constants
 from bytesviewapi.utils import is_valid_dict
 import json
 from bytesviewapi.bytesviewapi_exception import BytesviewException
+from bytesviewapi.helpers import post, MaxRetries
+
 
 class BytesviewApiClient(object):
 
@@ -28,7 +30,47 @@ class BytesviewApiClient(object):
             self.request_method = requests
         else:
             self.request_method = session
+        
+        # Default value for maximum retries and retry delay is zero 
+        self.max_retries = 0
+        self.retry_delay = 0
 
+        # Default proxies value is none
+        self.proxies = None
+
+        # set request timeout
+        self.request_timeout = constants.DEFAULT_REQUEST_TIMEOUT
+
+    def set_retries( self, max_retries=0, retry_delay = 0):
+        """ API maximum retry and delay when getting 500 error """
+        
+        """
+        :param max_retries: Your maximum retries when server responding with 500 internal error, Default value for this augument is zero.
+        :type max_retries:  integer 
+        :param retry_delay: Delay(in seconds) between retries when server responding with 500 error, Default value for this augument 
+                            is zero seconds.
+        :type retry_delay:  integer
+        """
+        self.max_retries = max_retries
+        self.retry_delay = retry_delay
+
+    def set_request_timeout( self, request_timeout = constants.DEFAULT_REQUEST_TIMEOUT):
+        """ API maximum timeout for the request """
+        
+        """
+        :param request_timeout: How many seconds to wait for the client to make a connection and/or send a response.
+        :type request_timeout:  integer 
+        """
+        self.request_timeout = request_timeout
+
+    def api_proxies( self, proxies):
+        """ Configure Proxie dictionary """
+        
+        """
+        :param proxies: A dictionary of the protocol to the proxy url ( ex.{ "https" : "https://1.1.1.1:80"}).
+        :type proxies:  dictionary 
+        """
+        self.proxies = proxies
 
     def sentiment_api( self, data=None, lang="en"):
         """ Sending POST request to the sentiment api"""
@@ -36,7 +78,7 @@ class BytesviewApiClient(object):
         """
         :param data: pass your desired strings in the dictionary format where each string has some unique key. (ex. {0: "this is good"})
         :type data: dictionary
-        :param lang: Language Code (English - en, Arabic - ar, Japanese = ja), Default laguage is english(en) 
+        :param lang: Language Code (English - en, Arabic - ar, Japanese = ja, Turkish = tr), Default laguage is english(en) 
         :type lang: string
         :return: server response in JSON object 
         """
@@ -65,9 +107,11 @@ class BytesviewApiClient(object):
             raise TypeError("Language input should be an string")
         
 
-        # Make a POST request to constants.SENTIMENT_URL
-        response = self.request_method.post(constants.SENTIMENT_URL, auth=self.header, timeout=300, data=json.dumps(payload, indent = 4)) 
-
+        # Make a POST request to constants.SENTIMENT_URL 
+        response = post(self.request_method,  constants.SENTIMENT_URL, self.header, payload, self.proxies, self.request_timeout)
+        
+        if response.status_code == 500:
+            response = MaxRetries(response, self.max_retries, self.retry_delay, self.request_method, constants.SENTIMENT_URL, self.header, payload, self.proxies, self.request_timeout)
 
         # Check the status code of the response if not equal to 200, then raise exception
         if response.status_code != 200:
@@ -113,7 +157,10 @@ class BytesviewApiClient(object):
         
 
         # Make a POST request to constants.EMOTION_URL
-        response = self.request_method.post(constants.EMOTION_URL, auth=self.header, timeout=300, data=json.dumps(payload, indent = 4)) 
+        response = post(self.request_method,  constants.EMOTION_URL, self.header, payload, self.proxies, self.request_timeout)
+        
+        if response.status_code == 500:
+            response = MaxRetries(response, self.max_retries, self.retry_delay, self.request_method, constants.EMOTION_URL, self.header, payload, self.proxies, self.request_timeout) 
 
 
         # Check the status code of the response if not equal to 200, then raise exception
@@ -159,7 +206,10 @@ class BytesviewApiClient(object):
         
 
         # Make a POST request to constants.KEYWORDS_URL
-        response = self.request_method.post(constants.KEYWORDS_URL, auth=self.header, timeout=300, data=json.dumps(payload, indent = 4)) 
+        response = post(self.request_method,  constants.KEYWORDS_URL, self.header, payload, self.proxies, self.request_timeout)
+        
+        if response.status_code == 500:
+            response = MaxRetries(response, self.max_retries, self.retry_delay, self.request_method, constants.KEYWORDS_URL, self.header, payload, self.proxies, self.request_timeout) 
 
 
         # Check the status code of the response if not equal to 200, then raise exception
@@ -174,7 +224,7 @@ class BytesviewApiClient(object):
         """ Sending POST request to the semantic api"""
         
         """
-        :param data: Pass your both strings in the "string1" and "string2" key of the dictionary data. (ex. {"string1": "this is good", "string2": "this is great"})
+        :param data: Pass your both strings in the unique keys of the dictionary. (ex. {"string1": "this is good", "string2": "this is great"})
         :type data: dictionary
         :param lang: Language Code (English - en), Default laguage is english(en) 
         :type lang: string
@@ -206,7 +256,10 @@ class BytesviewApiClient(object):
         
 
         # Make a POST request to constants.SEMANTIC_URL
-        response = self.request_method.post(constants.SEMANTIC_URL, auth=self.header, timeout=300, data=json.dumps(payload, indent = 4)) 
+        response = post(self.request_method,  constants.SEMANTIC_URL, self.header, payload, self.proxies, self.request_timeout)
+        
+        if response.status_code == 500:
+            response = MaxRetries(response, self.max_retries, self.retry_delay, self.request_method, constants.SEMANTIC_URL, self.header, payload, self.proxies, self.request_timeout)
 
 
         # Check the status code of the response if not equal to 200, then raise exception
@@ -241,7 +294,10 @@ class BytesviewApiClient(object):
             raise ValueError("Please provide data, data can not be empty")
 
         # Make a POST request to constants.NAME_GENDER_URL
-        response = self.request_method.post(constants.NAME_GENDER_URL, auth=self.header, timeout=300, data=json.dumps(payload, indent = 4)) 
+        response = post(self.request_method,  constants.NAME_GENDER_URL, self.header, payload, self.proxies, self.request_timeout)
+        
+        if response.status_code == 500:
+            response = MaxRetries(response, self.max_retries, self.retry_delay, self.request_method, constants.NAME_GENDER_URL, self.header, payload, self.proxies, self.request_timeout)
 
 
         # Check the status code of the response if not equal to 200, then raise exception
@@ -288,7 +344,10 @@ class BytesviewApiClient(object):
         
 
         # Make a POST request to constants.NER_URL
-        response = self.request_method.post(constants.NER_URL, auth=self.header, timeout=300, data=json.dumps(payload, indent = 4)) 
+        response = post(self.request_method,  constants.NER_URL, self.header, payload, self.proxies, self.request_timeout)
+        
+        if response.status_code == 500:
+            response = MaxRetries(response, self.max_retries, self.retry_delay, self.request_method, constants.NER_URL, self.header, payload, self.proxies, self.request_timeout)
 
 
         # Check the status code of the response if not equal to 200, then raise exception
@@ -335,7 +394,10 @@ class BytesviewApiClient(object):
         
 
         # Make a POST request to constants.INTENT_URL
-        response = self.request_method.post(constants.INTENT_URL, auth=self.header, timeout=300, data=json.dumps(payload, indent = 4)) 
+        response = post(self.request_method,  constants.INTENT_URL, self.header, payload, self.proxies, self.request_timeout)
+        
+        if response.status_code == 500:
+            response = MaxRetries(response, self.max_retries, self.retry_delay, self.request_method, constants.INTENT_URL, self.header, payload, self.proxies, self.request_timeout) 
 
 
         # Check the status code of the response if not equal to 200, then raise exception

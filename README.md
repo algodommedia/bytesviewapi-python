@@ -42,7 +42,7 @@ response = api.sentiment_api(data = data , lang = "en")
 
 `data` : You can pass your desired strings in the dictionary format where each string has some unique key. 
 
-`lang` : Language Code (English - en, Arabic - ar, Japanese - ja), Default language is english(en).
+`lang` : Language Code (English - en, Arabic - ar, Japanese - ja, Turkish - tr), Default language is english(en).
 
 &nbsp;
 ### EMOTION API
@@ -108,7 +108,7 @@ response = api.semantic_api(data = data , lang = "en")
 ```
 `API key` : Your private Bytesview API key. 
 
-`data` : You can pass your both strings in the "string1" and "string2" key of the dictionary. 
+`data` : Pass your both strings in the dictionary format with some unique key. 
 
 `lang` : Language Code (English - en), Default language is english(en).
 
