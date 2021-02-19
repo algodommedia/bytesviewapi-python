@@ -103,6 +103,7 @@ api = BytesviewApiClient(api_key="API key")
 
 # Pass your both strings in the "string1" and "string2" key of the dictionary
 data = {"string1": "A smiling costumed woman is holding an umbrella.", "string2": "A happy woman in a fairy costume holds an umbrella."}
+
 response = api.semantic_api(data = data , lang = "en")
 
 ```
@@ -125,6 +126,7 @@ api = BytesviewApiClient(api_key="API key")
 
 # Pass your desired names in the dictionary format where each string has some unique key.
 data ={"key1":"alvina", "key2":"نسترن", "key3":"ron", "key4":"rinki", "key5":"オウガ"}
+
 response = api.name_gender_api(data = data)
 
 ```
@@ -145,6 +147,7 @@ api = BytesviewApiClient(api_key="API key")
 
 # Pass your desired strings in a dictionary with unique key
 data = {"key1":"Mauritania and the IMF agreed Poverty Reduction arrangement"}
+
 response = api.ner_api(data = data , lang = "en")
 
 ```
@@ -167,6 +170,7 @@ api = BytesviewApiClient(api_key="API key")
 
 # Pass your desired strings in a dictionary with unique key
 data = {"key1":"Adam Rippon Wins 'Dancing With The Stars' Because It Was Destined"}
+
 response = api.intent_api(data = data , lang = "en")
 
 ```
