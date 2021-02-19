@@ -1,4 +1,4 @@
-![Alt text](bytesview-logo.png?raw=true)
+![Alt text](https://raw.githubusercontent.com/algodommedia/bytesviewapi-python/main/bytesview-logo.png)
 
 # <p align="center">Bytesviewapi Python Client
 Bytesviewapi allows you to create a library for accessing http services easily, in a centralized way. An API defined by bytesviewapi will return a JSON object when called.
