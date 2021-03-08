@@ -9,6 +9,8 @@ Bytesviewapi allows you to create a library for accessing http services easily, 
 [![Supported Python versions](https://img.shields.io/pypi/pyversions/pyTelegramBotAPI.svg)](https://pypi.org/project/bytesviewapi)
 [![Python](https://img.shields.io/badge/python-3.5%20%7C%203.6%20%7C%203.7%20%7C%203.8%20%7C%203.9-blue)](https://pypi.org/project/bytesviewapi)
 
+<br />
+
 # Installation
 
 ## Supported Python Versions
@@ -18,9 +20,12 @@ Python >= 3.5 fully supported and tested.
 ```
 pip install bytesviewapi
 ```
+
 ## Quick Start
 
 Bytesviewapi docs can be seen [here](https://www.bytesview.com/docs/).
+
+<br />
 
 ### SENTIMENT API
 
@@ -44,7 +49,8 @@ response = api.sentiment_api(data = data , lang = "en")
 
 `lang` : Language Code (English - en, Arabic - ar, Japanese - ja, Turkish - tr), Default language is english(en).
 
-&nbsp;
+<br />
+
 ### EMOTION API
 
 `POST 1/static/emotion`
@@ -65,9 +71,10 @@ response = api.emotion_api(data = data , lang = "en")
 
 `data` : You can pass your desired strings in the dictionary format where each string has some unique key. 
 
-`lang` : Language Code (English - en), Default language is english(en).
+`lang` : Language Code (English - en, Arabic - ar, Japanese - ja, Turkish - tr), Default language is english(en).
 
-&nbsp;
+<br />
+
 ### KEYWORDS API
 
 `POST 1/static/keywords`
@@ -90,7 +97,8 @@ response = api.keywords_api(data = data , lang = "en")
 
 `lang` : Language Code (English - en), Default language is english(en).
 
-&nbsp;
+<br />
+
 ### SEMANTIC API
 
 `POST 1/static/semantic`
@@ -101,7 +109,7 @@ from bytesviewapi import BytesviewApiClient
 # API key authorization, Initialize the client with your API key
 api = BytesviewApiClient(api_key="API key")
 
-# Pass your both strings in the "string1" and "string2" key of the dictionary
+# Pass your both strings in the dictionary format with some unique key
 data = {"string1": "A smiling costumed woman is holding an umbrella.", "string2": "A happy woman in a fairy costume holds an umbrella."}
 
 response = api.semantic_api(data = data , lang = "en")
@@ -109,11 +117,12 @@ response = api.semantic_api(data = data , lang = "en")
 ```
 `API key` : Your private Bytesview API key. 
 
-`data` : Pass your both strings in the dictionary format with some unique key. 
+`data` : You can pass your both strings in the dictionary format with some unique key. 
 
 `lang` : Language Code (English - en), Default language is english(en).
 
-&nbsp;
+<br />
+
 ### NAME-GENDER API
 
 `POST 1/static/name-gender`
@@ -134,7 +143,8 @@ response = api.name_gender_api(data = data)
 
 `data` : You can pass your desired names in the dictionary format where each string has some unique key.
 
-&nbsp;
+<br />
+
 ### NAMED-ENTITY API
 
 `POST 1/static/ner`
@@ -157,7 +167,8 @@ response = api.ner_api(data = data , lang = "en")
 
 `lang` : Language Code (English - en), Default language is english(en).
 
-&nbsp;
+<br />
+
 ### INTENT API
 
 `POST 1/static/intent`
@@ -179,6 +190,8 @@ response = api.intent_api(data = data , lang = "en")
 `data` : You can pass your desired strings in the dictionary format where each string has some unique key. 
 
 `lang` : Language Code (English - en), Default language is english(en).
+
+<br />
 
 ## License
 

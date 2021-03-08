@@ -1,6 +1,6 @@
 # All the API URL and language suported by API.
-BASE_URL = 'https://api.bytesview.com/1/'
-
+#BASE_URL = 'https://api.bytesview.com/1/'
+BASE_URL = 'http://api.bytesview.local/1/'
 
 # Sentiment URL 
 SENTIMENT_URL = BASE_URL + 'static/sentiment'
@@ -9,7 +9,7 @@ SENTIMENT_LANGUAGES_SUPPORT = {"ar", "en", 'ja', 'tr'}
 
 # Emotion URL 
 EMOTION_URL = BASE_URL + 'static/emotion'
-EMOTION_LANGUAGES_SUPPORT = {"en"}
+EMOTION_LANGUAGES_SUPPORT = {"ar", "en", 'ja', 'tr'}
 
 
 # Keywords URL 
