@@ -47,7 +47,7 @@ response = api.sentiment_api(data = data , lang = "en")
 
 `data` : You can pass your desired strings in the dictionary format where each string has some unique key. 
 
-`lang` : Language Code (English - en, Arabic - ar, Japanese - ja, Turkish - tr), Default language is english(en).
+`lang` : Pass [ISO code](https://en.wikipedia.org/wiki/List_of_ISO_639-1_codes) for the following supported language `English`, `Arabic`, `Turkish`, `Japanese`, `Spanish`, `French`, `German`, `Russian`, `Chinese(simplified)`, `Swedish`, `Czech`, `Danish`, `Greek`, `Korean`, `Latin`, `Hebrew`, `Indonesian`, `Kazakh`, `Armenian`, `Azerbaijani`, `Belarussian`, `Finnish`, `Bulgarian`, `Burmese`, `Persian`, `Portuguese`, `Urdu`, `Vietnamese`, `Thai`, `Hungarian`, `Italian`, `Polish`, `Ukrainian`, `Uzbek`. The default language is english(en).
 
 <br />
 
@@ -71,7 +71,7 @@ response = api.emotion_api(data = data , lang = "en")
 
 `data` : You can pass your desired strings in the dictionary format where each string has some unique key. 
 
-`lang` : Language Code (English - en, Arabic - ar, Japanese - ja, Turkish - tr), Default language is english(en).
+`lang` : Pass [ISO code](https://en.wikipedia.org/wiki/List_of_ISO_639-1_codes) for the following supported language `English`, `Arabic`, `Turkish`, `Japanese`, `Spanish`, `French`, `German`, `Russian`, `Chinese(simplified)`, `Swedish`, `Czech`, `Danish`, `Greek`, `Korean`, `Latin`, `Hebrew`, `Indonesian`, `Kazakh`, `Armenian`, `Azerbaijani`, `Belarussian`, `Finnish`, `Bulgarian`, `Burmese`, `Persian`, `Portuguese`, `Urdu`, `Vietnamese`, `Thai`, `Hungarian`, `Italian`, `Polish`, `Ukrainian`, `Uzbek`. The default language is english(en). 
 
 <br />
 
@@ -95,7 +95,7 @@ response = api.keywords_api(data = data , lang = "en")
 
 `data` : You can pass your desired strings in the dictionary format where each string has some unique key. 
 
-`lang` : Language Code (English - en), Default language is english(en).
+`lang` : Pass [ISO code](https://en.wikipedia.org/wiki/List_of_ISO_639-1_codes) for the following supported language `English`, `French`, `Turkish`, `German`, `Japanese`, `Chinese(simplified)`, `Spanish`, `Arabic`, `Russian`, `Italian`, `Danish`. The default language is english(en).
 
 <br />
 

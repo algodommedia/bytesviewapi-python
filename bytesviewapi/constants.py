@@ -3,17 +3,21 @@ BASE_URL = 'https://api.bytesview.com/1/'
 
 # Sentiment URL 
 SENTIMENT_URL = BASE_URL + 'static/sentiment'
-SENTIMENT_LANGUAGES_SUPPORT = {"ar", "en", 'ja', 'tr'}
+SENTIMENT_LANGUAGES_SUPPORT = {"ar", "en", 'ja', 'tr', 'hy', 'az', 'be', 'fi', 'bg', 'my', 'zh', 'cs', 'da', 'fr', 'de', 'el',
+                               'he', 'id', 'kk', 'ko', 'la', 'pa', 'pt', 'ru', 'es', 'sv', 'ur', 'vi', 'th', 'hu', 'it', 'pl',
+                               'uk', 'uz'}
 
 
 # Emotion URL 
 EMOTION_URL = BASE_URL + 'static/emotion'
-EMOTION_LANGUAGES_SUPPORT = {"ar", "en", 'ja', 'tr'}
+EMOTION_LANGUAGES_SUPPORT = {"ar", "en", 'ja', 'tr', 'hy', 'az', 'be', 'fi', 'bg', 'my', 'zh', 'cs', 'da', 'fr', 'de', 'el',
+                            'he', 'id', 'kk', 'ko', 'la', 'pa', 'pt', 'ru', 'es', 'sv', 'ur', 'vi', 'th', 'hu', 'it', 'pl',
+                            'uk', 'uz'}
 
 
 # Keywords URL 
 KEYWORDS_URL = BASE_URL + 'static/keywords'
-KEYWORDS_LANGUAGES_SUPPORT = {"en"}
+KEYWORDS_LANGUAGES_SUPPORT = {'en', 'fr', 'de', 'da', 'it', 'es', 'zh', "ja", "ru", "tr", "ar"}
 
 
 # Semantic URL 
