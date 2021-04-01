@@ -6,7 +6,7 @@ with open("README.md", "r") as fh:
 
 setup(
     name='bytesviewapi',
-    version='0.1.4',
+    version='0.1.5',
     packages=['bytesviewapi'],
     description='Python library for bytesview client-API Call',
     long_description=long_description,
@@ -23,6 +23,13 @@ setup(
     keywords=[
         'byteviewapi',
         'senitment',
+        'emotion',
+        'keywords',
+        'semantic',
+        'name-entity',
+        'name-gender',
+        'intent',
+        'feature',
         ],
     classifiers=[
         "Development Status :: 2 - Pre-Alpha",

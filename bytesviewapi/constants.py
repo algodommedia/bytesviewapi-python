@@ -38,5 +38,16 @@ NER_LANGUAGES_SUPPORT = {"en"}
 INTENT_URL = BASE_URL + 'static/intent'
 INTENT_LANGUAGES_SUPPORT = {"en"}
 
+
+# Feature URL 
+FEATURE_URL = BASE_URL + 'static/feature'
+FEATURE_LANGUAGES_SUPPORT = {"en"}
+
+
+# Topic URL 
+TOPIC_URL = BASE_URL + 'static/topic'
+TOPIC_LANGUAGES_SUPPORT = {"en"}
+
+
 # Default request timeout is 300 seconds 
 DEFAULT_REQUEST_TIMEOUT = 300

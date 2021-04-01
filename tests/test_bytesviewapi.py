@@ -19,7 +19,7 @@ class test_bytesviwapi(unittest.TestCase):
         self.assertEqual(response['success']['key1']['label'], 2)
 
     def test_keywords_api(self):
-        response = self.api.keywords_api(data = {"key1": "Apple hasn't announced the tracking fobs"}, lang = "en")
+        response = self.api.keywords_api(data = {"key1": "Apple hasn't announced anything"}, lang = "en")
 
         self.assertEqual(str(response['success']['key1']['tags'][0]), "Apple")
 
@@ -42,3 +42,13 @@ class test_bytesviwapi(unittest.TestCase):
         response = self.api.intent_api(data = {"key1": "please subscribe to our channel"}, lang = "en")
         
         self.assertEqual(response['success']['key1']['label'], 2)
+
+    def test_feature_api(self):
+        response = self.api.feature_api(data = {"key1": "This is probably one of the funniest films of the 1980's. Eddie Murphy does a fine job as con man Billy Ray and Dan Ackroyd is great as Louis."}, lang = "en")
+        
+        self.assertEqual(response['success']['key1']['review'][0], "funniest")
+
+    def test_topic_api(self):
+        response = self.api.topic_api(data = {"key1": "Accounting"}, lang = "en")
+        
+        self.assertEqual(response['success']['key1']['label_key'], 0)

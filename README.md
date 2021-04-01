@@ -193,6 +193,53 @@ response = api.intent_api(data = data , lang = "en")
 
 <br />
 
+### FEATURE API
+
+`POST 1/static/feature`
+
+```
+from bytesviewapi import BytesviewApiClient
+
+# API key authorization, Initialize the client with your API key
+api = BytesviewApiClient(api_key="API key")
+
+# Pass your desired strings in a dictionary with unique key
+data = {"key1":"This is probably one of the funniest films of the 1980's. Eddie Murphy does a fine job as con man Billy Ray and Dan Ackroyd is great as Louis."}
+
+response = api.feature_api(data = data , lang = "en")
+
+```
+`API key` : Your private Bytesview API key. 
+
+`data` : You can pass your desired strings in the dictionary format where each string has some unique key. 
+
+`lang` : Language Code (English - en), Default language is english(en).
+
+<br />
+
+### TOPIC API
+
+`POST 1/static/topic`
+
+```
+from bytesviewapi import BytesviewApiClient
+
+# API key authorization, Initialize the client with your API key
+api = BytesviewApiClient(api_key="API key")
+
+# Pass your desired strings in a dictionary with unique key
+data = {"key1":"Shriram Automall India Limited is hiring for Accounts Department."}
+
+response = api.topic_api(data = data , lang = "en")
+
+```
+`API key` : Your private Bytesview API key. 
+
+`data` : You can pass your desired strings in the dictionary format where each string has some unique key. 
+
+`lang` : Language Code (English - en), Default language is english(en).
+<br />
+
 ## License
 
 Provided under [MIT License](https://github.com/algodommedia/bytesviewapi-python/blob/main/LICENSE) by Matt Lisivick.

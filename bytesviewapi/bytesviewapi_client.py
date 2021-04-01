@@ -406,3 +406,103 @@ class BytesviewApiClient(object):
         
         # Return the response json
         return response.json()
+
+
+    def feature_api( self, data=None, lang="en"):
+        """ Sending POST request to the feature api"""
+        
+        """
+        :param data: pass your desired strings in the dictionary format where each string has some unique key. (ex. {0: "this is good"})
+        :type data: dictionary
+        :param lang: ISO code for supported language, Default laguage is english(en) 
+        :type lang: string
+        :return: server response in JSON object 
+        """
+        
+        payload = {}
+
+        if self.api_key is None:
+            raise ValueError("Please provide your private API Key")
+
+        # Check if valid data dictionary
+        if data is not None:
+            if is_valid_dict(data):
+                payload["data"] = data
+            else:
+                raise TypeError("Data should be of type dictionary")
+        else:
+            raise ValueError("Please provide data, data can not be empty")
+
+        # Check if valid language string
+        if isinstance(lang, str):
+            if lang in constants.FEATURE_LANGUAGES_SUPPORT:
+                payload["lang"] = lang
+            else:
+                raise ValueError("Please provide valid Language code, check documentation for supported languages")
+        else:
+            raise TypeError("Language input should be an string")
+        
+
+        # Make a POST request to constants.FEATURE_URL
+        response = post(self.request_method,  constants.FEATURE_URL, self.header, payload, self.proxies, self.request_timeout)
+        
+        if response.status_code == 500:
+            response = MaxRetries(response, self.max_retries, self.retry_delay, self.request_method, constants.FEATURE_URL, self.header, payload, self.proxies, self.request_timeout) 
+
+
+        # Check the status code of the response if not equal to 200, then raise exception
+        if response.status_code != 200:
+            raise BytesviewException(response.json())
+        
+        # Return the response json
+        return response.json()
+
+
+    def topic_api( self, data=None, lang="en"):
+        """ Sending POST request to the topic api"""
+        
+        """
+        :param data: pass your desired strings in the dictionary format where each string has some unique key. (ex. {0: "this is good"})
+        :type data: dictionary
+        :param lang: ISO code for supported language, Default laguage is english(en) 
+        :type lang: string
+        :return: server response in JSON object 
+        """
+        
+        payload = {}
+
+        if self.api_key is None:
+            raise ValueError("Please provide your private API Key")
+
+        # Check if valid data dictionary
+        if data is not None:
+            if is_valid_dict(data):
+                payload["data"] = data
+            else:
+                raise TypeError("Data should be of type dictionary")
+        else:
+            raise ValueError("Please provide data, data can not be empty")
+
+        # Check if valid language string
+        if isinstance(lang, str):
+            if lang in constants.TOPIC_LANGUAGES_SUPPORT:
+                payload["lang"] = lang
+            else:
+                raise ValueError("Please provide valid Language code, check documentation for supported languages")
+        else:
+            raise TypeError("Language input should be an string")
+        
+
+        # Make a POST request to constants.TOPIC_URL
+        response = post(self.request_method,  constants.TOPIC_URL, self.header, payload, self.proxies, self.request_timeout)
+        
+        if response.status_code == 500:
+            response = MaxRetries(response, self.max_retries, self.retry_delay, self.request_method, constants.TOPIC_URL, self.header, payload, self.proxies, self.request_timeout) 
+
+
+        # Check the status code of the response if not equal to 200, then raise exception
+        if response.status_code != 200:
+            raise BytesviewException(response.json())
+        
+        # Return the response json
+        return response.json()
