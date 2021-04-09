@@ -1,7 +1,7 @@
-from bytesviewapi import BytesviewapiClient
+from bytesviewapi import BytesviewApiClient
 
 # API key authorization, Initialize the client with your API key
-api = BytesviewapiClient(api_key='API Key')
+api = BytesviewApiClient(api_key='API Key')
 
 # Sentiment API
 response = api.sentiment_api(data = {"key1": "we are good here"}, lang = "en")
@@ -29,4 +29,13 @@ print(response)
 
 # Intent API
 response = api.intent_api(data = {"key1":"Adam Rippon Wins 'Dancing With The Stars' Because It Was Destined"}, lang = "en")
+print(response)
+
+# Feature API
+data = {"key1":"This is probably one of the funniest films of the 1980's. Eddie Murphy does a fine job as con man Billy Ray and Dan Ackroyd is great as Louis."}
+response = api.feature_api(data = data , lang = "en")
+print(response)
+
+# Topic API
+response = api.topic_api(data = {"key1":"Shriram Automall India Limited is hiring for Accounts Department."} , lang = "en")
 print(response)
