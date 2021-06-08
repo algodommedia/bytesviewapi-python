@@ -1,3 +1,5 @@
+# Custom exception class BytesviewException
+
 class BytesviewException(Exception):
     """Base class for all other exceptions"""
 

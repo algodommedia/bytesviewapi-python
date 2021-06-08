@@ -29,7 +29,7 @@ Bytesviewapi docs can be seen [here](https://www.bytesview.com/docs/).
 
 ### SENTIMENT API
 
-`POST 1/static/sentiment`
+`POST 1.1/static/sentiment`
 
 ```
 from bytesviewapi import BytesviewApiClient
@@ -53,7 +53,7 @@ response = api.sentiment_api(data = data , lang = "en")
 
 ### EMOTION API
 
-`POST 1/static/emotion`
+`POST 1.1/static/emotion`
 
 ```
 from bytesviewapi import BytesviewApiClient
@@ -77,7 +77,7 @@ response = api.emotion_api(data = data , lang = "en")
 
 ### KEYWORDS API
 
-`POST 1/static/keywords`
+`POST 1.1/static/keywords`
 
 ```
 from bytesviewapi import BytesviewApiClient
@@ -101,7 +101,7 @@ response = api.keywords_api(data = data , lang = "en")
 
 ### SEMANTIC API
 
-`POST 1/static/semantic`
+`POST 1.1/static/semantic`
 
 ```
 from bytesviewapi import BytesviewApiClient
@@ -125,7 +125,7 @@ response = api.semantic_api(data = data , lang = "en")
 
 ### NAME-GENDER API
 
-`POST 1/static/name-gender`
+`POST 1.1/static/name-gender`
 
 ```
 from bytesviewapi import BytesviewApiClient
@@ -147,7 +147,7 @@ response = api.name_gender_api(data = data)
 
 ### NAMED-ENTITY API
 
-`POST 1/static/ner`
+`POST 1.1/static/ner`
 
 ```
 from bytesviewapi import BytesviewApiClient
@@ -171,7 +171,7 @@ response = api.ner_api(data = data , lang = "en")
 
 ### INTENT API
 
-`POST 1/static/intent`
+`POST 1.1/static/intent`
 
 ```
 from bytesviewapi import BytesviewApiClient
@@ -195,7 +195,7 @@ response = api.intent_api(data = data , lang = "en")
 
 ### FEATURE API
 
-`POST 1/static/feature`
+`POST 1.1/static/feature`
 
 ```
 from bytesviewapi import BytesviewApiClient
@@ -219,7 +219,7 @@ response = api.feature_api(data = data , lang = "en")
 
 ### TOPIC API
 
-`POST 1/static/topic`
+`POST 1.1/static/topic`
 
 ```
 from bytesviewapi import BytesviewApiClient
